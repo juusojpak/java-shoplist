@@ -79,10 +79,9 @@ public class ServerConnection {
                 JsonArray jsonArr = object.getJsonArray("msg");
                 listnames = new String[jsonArr.size()];
 
-                for(int i = 0; i < jsonArr.size(); i++) {
+                for (int i = 0; i < jsonArr.size(); i++) {
                     listnames[i] = jsonArr.get(i).toString();
                 }
-
             } else {
                 return new String[0];
             }
@@ -105,7 +104,7 @@ public class ServerConnection {
      * list.
      *
      * @param listName table from which the items are queried from.
-*      @param combine whether the content of read file is appended
+     * @param combine whether the content of read file is appended
      *                to current shop list or overwritten.
      * @return whether server call was success and received items were added to
      *         the shopping list.
@@ -127,7 +126,7 @@ public class ServerConnection {
                     list.clearList();
                 }
 
-                for(int i = 0; i < jsonArr.size(); i++) {
+                for (int i = 0; i < jsonArr.size(); i++) {
                     System.out.println(jsonArr.get(i).toString());
                     reader = Json.createReader(
                             new StringReader(jsonArr.get(i).toString()));
@@ -137,7 +136,6 @@ public class ServerConnection {
                 }
 
                 return true;
-
             } else {
                 System.out.println(object.getString("msg"));
                 return false;

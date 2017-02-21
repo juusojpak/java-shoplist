@@ -109,8 +109,10 @@ public class ShoppingGUI extends JFrame {
         JMenuItem saveLocal = new JMenuItem(messages.getString("saveLocal"));
         JMenuItem loadRemote = new JMenuItem(messages.getString("loadRemote"));
         JMenuItem saveRemote = new JMenuItem(messages.getString("saveRemote"));
-        JMenuItem combineLocal = new JMenuItem(messages.getString("combineLocal"));
-        JMenuItem combineRemote = new JMenuItem(messages.getString("combineRemote"));
+        JMenuItem combineLocal = 
+            new JMenuItem(messages.getString("combineLocal"));
+        JMenuItem combineRemote = 
+            new JMenuItem(messages.getString("combineRemote"));
         JMenuItem uploadDbox = new JMenuItem(messages.getString("uploadDbox"));
 
         file.setMnemonic(KeyEvent.VK_F);
@@ -224,9 +226,11 @@ public class ShoppingGUI extends JFrame {
 
             try {
                 int index = table.getSelectedRow();
+
                 if (index >= 0) {
                     shoplist.removeItem(shoplist.getItem(index));
                 }
+
                 repaint();
             } catch (IndexOutOfBoundsException | NullPointerException ex) {
                 ex.printStackTrace();
@@ -494,7 +498,7 @@ public class ShoppingGUI extends JFrame {
     }
 
     /**
-     * Open confirm prompt to authorize clearing of the list.
+     * Opens confirm prompt to authorize clearing of the list.
      */
     public void openClearConfirm() {
         int result = JOptionPane.showConfirmDialog(null,
@@ -509,7 +513,7 @@ public class ShoppingGUI extends JFrame {
     }
 
     /**
-     * Open instructions prompt.
+     * Opens instructions prompt.
      */
     public void openHelp() {
         JPanel mainPanel = new JPanel();

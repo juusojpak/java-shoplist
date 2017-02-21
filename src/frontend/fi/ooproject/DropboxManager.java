@@ -48,8 +48,8 @@ public class DropboxManager {
      */
     public DropboxManager() {
 
-        String APP_KEY = "";
-        String APP_SECRET = "";
+        String APP_KEY = "9u34v4yllfxwvq4";
+        String APP_SECRET = "t8eew3fgy8y2j63";
         DbxAppInfo appInfo = new DbxAppInfo(APP_KEY, APP_SECRET);
 
         reqConf = new DbxRequestConfig(
@@ -116,11 +116,10 @@ public class DropboxManager {
                         lines.add(list.getItem(i).toString());
                     }
 
-
-
                     Files.write(path, lines, Charset.forName("UTF-8"));
 
-                    try (FileInputStream inputStream = new FileInputStream(inputFile)) {
+                    try (FileInputStream inputStream =
+                     new FileInputStream(inputFile)) {
 
                         DbxEntry.File uploadedFile = client.uploadFile(
                                 "/"+ fileName +".txt",
@@ -129,7 +128,8 @@ public class DropboxManager {
                                 inputStream
                         );
 
-                        System.out.println("Uploaded: " + uploadedFile.toString());
+                        System.out.println("Uploaded: " 
+                            + uploadedFile.toString());
                     }
                 } catch(IOException | DbxException e) {
                     e.printStackTrace();
